@@ -1,7 +1,7 @@
 matlow.github.io
 ================
 
-Suite à notre collaboration sur le projet Taxonomy de la MoodleMoot je tente la création d'espace de partage autour des outils et thématiques liés à moodle :
+Suite à notre collaboration sur le projet Taxonomy de la MoodleMoot je tente la création d'espace de partage autour des outils et thématiques liés à moodle dans l'enseignement supérieur :
 
   *  archi systeme et configuration moodle (serveurs, bdd)
   *  Problématiques de maj d'une année sur l'autre (maj utilisateurs, maquettes)
