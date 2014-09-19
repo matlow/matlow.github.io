@@ -1,59 +1,52 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Partage de connaissances et expériences autour de moodle</title>
-  </head>
+---
+layout: default
+title: moodle partage
+---
+<h3>
+    <a name="salut-%C3%A0-tous-" class="anchor" href="#salut-%C3%A0-tous-"><span
+            class="octicon octicon-link"></span></a>Salut à tous !</h3>
 
-  <body>
-    <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>Moodle partage</h1>
-          <h2>Partage de connaissances et expériences autour de moodle</h2>
-        </header>
-
-        <!--<section id="downloads" class="clearfix">-->
-          <!--<a href="https://github.com/matlow" id="view-on-github" class="button"><span>View on GitHub</span></a>-->
-        <!--</section>-->
-
-        <hr>
-
-        <section id="main_content">
-          <h3>
-<a name="salut-%C3%A0-tous-" class="anchor" href="#salut-%C3%A0-tous-"><span class="octicon octicon-link"></span></a>Salut à tous !</h3>
-
-<p>La rentrée est elle meilleure que la précédente ? :)
-Est-ce que vous seriez partant pour créer un blog à partir du depot github pour partager nos expériences autour de moodle (et autres ....). ?
-<a href="https://pages.github.com/">https://pages.github.com/</a> permet de faire ca simplement.</p>
+<p>Le but est de partager nos expériences pour faire évoluer plus efficacement nos outils.
+    Si des motivés y voit un intérêt commun n'hésitez pas vous manisfester.
+    a+ et bonne rentrée à tous.</p>
 
 <p>En vrac, plusieurs idées de idées de thèmes :</p>
 
 <ul>
-<li><a href="/archi.html">archi systeme et configuration moodle (serveurs, bdd)</a></li>
-<li><a href="/maj.html">Problématiques de maj d'une année sur l'autre (maj utilisateurs, maquettes)</a></li>
-<li><a href="/com.html">communication avec d'autres systèmes (apogee, ldap, esup, mahara...)</a></li>
-<li><a href="/frameworks.html">exemples d'implémentations avec les frameworks actuels (php, java)</a></li>
-</ul><p>Le but étant de partager nos expériences pour faire évoluer plus efficacement nos outils.
-Si des motivés y voit un intérêt commun n'hésitez pas vous manisfester.
-a+ et bonne fin d'année à tous.</p>
-        </section>
+    <li><a href="#">archi systeme et configuration moodle (serveurs, bdd)</a></li>
+    <li><a href="#">Problématiques de maj d'une année sur l'autre (maj utilisateurs, maquettes)</a></li>
+    <li><a href="#">communication avec d'autres systèmes (apogee, ldap, esup, mahara...)</a></li>
+    <li><a href="#">exemples d'implémentations avec les frameworks actuels (php, java)</a></li>
+</ul>
 
-        <footer>
-            Partage de connaissances et expériences autour de moodle
-        </footer>
+<h3>Liste des articles par catégories (tests)</h3>
 
-        
-      </div>
-    </div>
-  </body>
-</html>
+{% for category in site.categories %}
+<h4>
+    <a name="{{ category | first }}">{{ category | first }}</a>
+</h4>
+<ul>
+    {% for posts in category %}
+    {% for post in posts %}
+        {% if post.title == empty %}
+
+        {% else %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+</ul>
+{% endfor %}
+
+<!--<h2>archive</h2>-->
+<!--<ul id="archive">-->
+<!--{% for post in site.posts %}-->
+<!--<li class="post-{{ post.category }}">-->
+<!--{% if post.external_url == nil %}-->
+<!--<a href="{{ post.url }}">{{ post.title }}</a><abbr>{{ post.date | date_to_string }}</abbr>-->
+<!--{% else %}-->
+<!--<a href="{{ post.external_url }}">{{ post.title }}</a><abbr>{{ post.date | date_to_string }}</abbr>-->
+<!--{% endif %}-->
+<!--</li>-->
+<!--{% endfor %}-->
+<!--</ul>-->
