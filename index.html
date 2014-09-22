@@ -10,7 +10,10 @@ title: moodle partage
     Si des motivés y voient un intérêt commun n'hésitez pas vous manisfester.
     a+ et bonne rentrée à tous.</p>
 
-<p>En vrac, plusieurs idées de idées de thèmes :</p>
+<p>Vous pouvez poster vos contributions sur <a href="https://github.com/moodlemoot/taxonomy/issues/3">cette discussion ici (issue github)</a>
+. Je me chargerai de les déployer sur le blog après validation par les membres du groupe mooodlemooot/taxonomy </p>
+
+<p>En vrac, plusieurs idées de thèmes :</p>
 
 <ul>
     <li><a href="#">archi systeme et configuration moodle (serveurs, bdd)</a></li>
@@ -19,34 +22,19 @@ title: moodle partage
     <li><a href="#">exemples d'implémentations avec les frameworks actuels (php, java)</a></li>
 </ul>
 
-<h3>Liste des articles par catégories (tests)</h3>
+<h3>Liste des articles par catégories</h3>
 
 {% for category in site.categories %}
-<h4>
-    <a name="{{ category | first }}">{{ category | first }}</a>
-</h4>
-<ul>
-    {% for posts in category %}
-    {% for post in posts %}
-        {% if post.title == empty %}
-
-        {% else %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+<h4><a name="{{ category | first }}">{{ category | first }}</a></h4>
+    <ul>
+        {% for posts in category %}
+        {% for post in posts %}
+        {% if post.url %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endif %}
-    {% endfor %}
-    {% endfor %}
-</ul>
+        {% endfor %}
+        {% endfor %}
+    </ul>
+</li>
 {% endfor %}
 
-<!--<h2>archive</h2>-->
-<!--<ul id="archive">-->
-<!--{% for post in site.posts %}-->
-<!--<li class="post-{{ post.category }}">-->
-<!--{% if post.external_url == nil %}-->
-<!--<a href="{{ post.url }}">{{ post.title }}</a><abbr>{{ post.date | date_to_string }}</abbr>-->
-<!--{% else %}-->
-<!--<a href="{{ post.external_url }}">{{ post.title }}</a><abbr>{{ post.date | date_to_string }}</abbr>-->
-<!--{% endif %}-->
-<!--</li>-->
-<!--{% endfor %}-->
-<!--</ul>-->
